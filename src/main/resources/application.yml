@@ -1,0 +1,6 @@
+debug: true
+hadoop:
+  user: "localhost"
+  hdfs:
+    hdfs-site: "hdfs-site.xml"
+    core-site: "core-site.xml"
