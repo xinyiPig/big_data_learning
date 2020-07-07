@@ -6,7 +6,7 @@ import org.apache.hadoop.hbase.HBaseConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//@Configuration
 public class HBaseConfig {
     @Bean
     public HBaseService getHBaseService() {

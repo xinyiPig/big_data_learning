@@ -16,4 +16,8 @@
 
 2、MapReduce（词频分析）
 
-3、HBase （数据库增删查改操作，hbase-site.xml,hbase-env.sh在resource文件下）
+3、HBase （数据库增删查改操作，base-site.xml,hbase-env.sh在resource文件下）
+
+4、Hive 数据仓库的配置 和数据查询
+
+5、spark 实践例子
