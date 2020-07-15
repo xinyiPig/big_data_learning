@@ -21,4 +21,4 @@
 4、Hive 数据仓库的配置 和数据查询
 
 5、spark 实践例子
-   - 2020年美国新冠肺炎疫情数据分析  参考http://dblab.xmu.edu.cn/blog/2636-2/
+   - 2020年美国新冠肺炎疫情数据分析  参考 http://dblab.xmu.edu.cn/blog/2636-2/ 改成java实现，存储数据到json文件，利用python画出数据分析图
