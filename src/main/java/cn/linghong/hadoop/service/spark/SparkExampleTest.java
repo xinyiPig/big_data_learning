@@ -16,8 +16,6 @@ import java.sql.*;
 @SpringBootTest
 public class SparkExampleTest implements Serializable {
 
-
-
     @Test
     public void  getData() {
         String logFile = "file:///Users/zzx/Desktop/project/bigData/spark/README.md"; // Should be some file on your system
@@ -33,6 +31,7 @@ public class SparkExampleTest implements Serializable {
         System.out.println("Lines with a: " + numAs + ", lines with b: " + numBs);
 
     }
+
 
 
 }
