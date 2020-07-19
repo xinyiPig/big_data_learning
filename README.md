@@ -22,3 +22,4 @@
 
 5、spark 实践例子
    - 2020年美国新冠肺炎疫情数据分析  参考 http://dblab.xmu.edu.cn/blog/2636-2/ 改成java实现，存储数据到json文件，利用python画出数据分析图
+   - 基于零售交易数据的Spark数据处理与分析 参考 http://dblab.xmu.edu.cn/blog/2652-2/ 改成java 清洗数据，分析数据
