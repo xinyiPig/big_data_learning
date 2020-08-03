@@ -20,7 +20,7 @@ import org.apache.flink.util.Collector;
 public class flinkExampleTest {
 
     /**
-    * @Description: 此例子基于flink 单机模式
+    * @Description: 此例子基于flink 单机模式 macOs 先在命令行执行 nc -l 9000
     * @Param:
     * @return:
     * @Author: zzx

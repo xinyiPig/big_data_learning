@@ -25,4 +25,4 @@
    - 基于零售交易数据的Spark数据处理与分析 参考 http://dblab.xmu.edu.cn/blog/2652-2/ 改成java 清洗数据，分析数据
    
 6、增加 flink 实时数据处理 实践例子
-   - test1 利用websocket模仿数据实时推流
+   - test1  利用websocket模仿数据实时推流
