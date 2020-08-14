@@ -26,4 +26,4 @@
    
 6、增加 flink 实时数据处理 实践例子
    - test1  利用websocket模仿数据实时推流
-   更新了 flink 从kafka读取数据，自定义sink,写入到mysql的实践的例子;flink_kafka_example,flink_kafka_example1
+   - 更新了 flink 从kafka读取数据，自定义sink,写入到mysql的实践的例子;flink_kafka_example,flink_kafka_example1
