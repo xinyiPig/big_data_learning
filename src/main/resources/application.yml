@@ -31,3 +31,34 @@ hive:
   maxPoolPreparedStatementPerConnectionSize: 20
   connectionErrorRetryAttempts: 0
   breakAfterAcquireFailure: true
+
+
+
+kafka:
+  source:
+    bootstrap:
+         servers: localhost:9092
+    zookeeper:
+         connect: localhost:2181
+    group:
+          id: metric-group
+    topic: student
+    # 并行度
+    parallelism: 1
+
+  sink:
+    bootstrap:
+        servers: localhost:9092
+    zookeeper:
+        connect: localhost:2181
+    group:
+          id: metric-group
+    topic: student-sink
+    parallelism: 1
+  key:
+      deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  value:
+      deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  auto:
+      offset:
+        reset: latest

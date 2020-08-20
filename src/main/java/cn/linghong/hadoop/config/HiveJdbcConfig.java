@@ -10,11 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import javax.sql.DataSource;
 
-/**
- * hive的相关配置类
- * @author zyl
- * @date 2019年4月1日
- */
+
 
 @Configuration
 @ConfigurationProperties(prefix = "hive")

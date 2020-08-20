@@ -1,12 +1,10 @@
-package cn.linghong.hadoop.service.flink.flink_kafka_example1;
+package cn.linghong.hadoop.service.flink.Demo;
 
+import cn.linghong.hadoop.service.flink.flink_kafka_example1.Student;
 import com.alibaba.fastjson.JSON;
-
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Properties;
 
 /**

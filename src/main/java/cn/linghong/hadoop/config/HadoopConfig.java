@@ -7,11 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/**
- * @author yanan.wang
- * @describe
- * @createTime 2019-12-19 15:13
- */
+
 @Configuration
 @Slf4j
 public class HadoopConfig {
