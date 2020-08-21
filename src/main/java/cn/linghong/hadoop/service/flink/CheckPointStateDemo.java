@@ -1,16 +1,12 @@
 package cn.linghong.hadoop.service.flink;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.common.restartstrategy.RestartStrategies;
+import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.contrib.streaming.state.RocksDBStateBackend;
 import org.apache.flink.streaming.api.CheckpointingMode;
 import org.apache.flink.streaming.api.TimeCharacteristic;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.apache.flink.api.common.functions.FlatMapFunction;
-import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.windowing.time.Time;
@@ -19,10 +15,7 @@ import java.io.IOException;
 
 
 @Slf4j
-@SpringBootTest
-@RunWith(SpringJUnit4ClassRunner.class)
-
-public class flinkExampleTest {
+public class CheckPointStateDemo {
 
     private  static String hdfsPath = "hdfs://localhost:9000/flink/checkpoint/";
 
@@ -33,78 +26,9 @@ public class flinkExampleTest {
     * @Author: zzx
     * @Date: 2020-08-03
     **/
-    @Test
-    public   void test1(){
-        // set up the streaming execution environment
-        final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-
-        /*
-         * Here, you can start creating your execution plan for Flink.
-         *
-         * Start with getting some data from the environment, like
-         *  env.readTextFile(textPath);
-         *
-         * then, transform the resulting DataStream<String> using operations
-         * like
-         *  .filter()
-         *  .flatMap()
-         *  .join()
-         *  .coGroup()
-         *
-         * and many more.
-         * Have a look at the programming guide for the Java API:
-         *
-         * http://flink.apache.org/docs/latest/apis/streaming/index.html
-         *
-         */
-
-        DataStream<String> text = env.socketTextStream("127.0.0.1", 9000);
-        DataStream<Tuple2<String, Integer>> dataStream = text.flatMap(new FlatMapFunction<String, Tuple2<String, Integer>>() {
-            @Override
-            public void flatMap(String s, Collector<Tuple2<String, Integer>> collector) throws Exception {
-                String[] tokens = s.toLowerCase().split("\\W+");
-
-                for (String token : tokens) {
-                    if (token.length() > 0) {
-                        collector.collect(new Tuple2<String, Integer>(token, 1));
-                    }
-                }
-            }
-        }).keyBy(0).timeWindow(Time.seconds(5)).sum(1);
-
-        dataStream.print();
-        // execute program
-        try {
-            env.execute("Java WordCount from SocketTextStream Example");
-        }catch (Exception e){
-            log.error(e.getMessage());
-        }
-
-    }
-
     public static void main(String[] args){
         // set up the streaming execution environment
         final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-
-        /*
-         * Here, you can start creating your execution plan for Flink.
-         *
-         * Start with getting some data from the environment, like
-         *  env.readTextFile(textPath);
-         *
-         * then, transform the resulting DataStream<String> using operations
-         * like
-         *  .filter()
-         *  .flatMap()
-         *  .join()
-         *  .coGroup()
-         *
-         * and many more.
-         * Have a look at the programming guide for the Java API:
-         *
-         * http://flink.apache.org/docs/latest/apis/streaming/index.html
-         *
-         */
         // 设置并行度
         env.setParallelism(1);
         // 设置event time
