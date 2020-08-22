@@ -13,7 +13,6 @@ import org.apache.flink.streaming.api.windowing.time.Time;
 import org.apache.flink.util.Collector;
 import java.io.IOException;
 
-
 @Slf4j
 public class CheckPointStateDemo {
 
