@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>hadoop</artifactId>
+        <groupId>cn.linghong</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>flink</artifactId>
+    <dependencies>
+        <!-- hadoop mapreduce 核心jar包  -->
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-mapreduce-client-core</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <!-- 引入hadoop-common Jar包 -->
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-common</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-hdfs</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+        <!--    hadoop end    -->
+        <!--  flink       -->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.flink</groupId>-->
+        <!--            <artifactId>flink-java</artifactId>-->
+        <!--            <version>${flink.version}</version>-->
+        <!--            <scope>provided</scope>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.flink</groupId>-->
+        <!--            <artifactId>flink-streaming-java_${scala.binary.version}</artifactId>-->
+        <!--            <version>${flink.version}</version>-->
+        <!--            <scope>provided</scope>-->
+        <!--        </dependency>-->
+
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-core</artifactId>
+            <version>1.11.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-java</artifactId>
+            <version>1.11.1</version>
+
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-streaming-java_2.11</artifactId>
+            <version>1.11.1</version>
+
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-clients_2.11</artifactId>
+            <version>1.11.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-kafka-0.11_2.11</artifactId>
+            <version>1.11.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-statebackend-rocksdb_2.11</artifactId>
+            <version>1.11.1</version>
+
+        </dependency>
+        <!--  flink end       -->
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- 编译插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <!-- scala编译插件 -->
+<!--            <plugin>-->
+<!--                <groupId>net.alchim31.maven</groupId>-->
+<!--                <artifactId>scala-maven-plugin</artifactId>-->
+<!--                <version>3.4.6</version>-->
+<!--                <configuration>-->
+<!--                    <scalaCompatVersion>2.11</scalaCompatVersion>-->
+<!--                    <scalaVersion>2.11.12</scalaVersion>-->
+<!--                    <encoding>UTF-8</encoding>-->
+<!--                </configuration>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>compile-scala</id>-->
+<!--                        <phase>compile</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>add-source</goal>-->
+<!--                            <goal>compile</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                    <execution>-->
+<!--                        <id>test-compile-scala</id>-->
+<!--                        <phase>test-compile</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>add-source</goal>-->
+<!--                            <goal>testCompile</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+            <!-- 打jar包插件(会包含所有依赖) -->
+<!--            <plugin>-->
+<!--            <groupId>org.apache.maven.plugins</groupId>-->
+<!--            <artifactId>maven-assembly-plugin</artifactId>-->
+<!--            <version>2.5.3</version>-->
+<!--            <configuration>-->
+<!--                <descriptorRefs>-->
+<!--                    <descriptorRef>jar-with-dependencies</descriptorRef>-->
+<!--                </descriptorRefs>-->
+<!--                <archive>-->
+<!--                    <manifest>-->
+<!--                        &lt;!&ndash; 可以设置jar包的入口类(可选) &ndash;&gt;-->
+<!--                        <mainClass>com.hw.WorldCount</mainClass>-->
+<!--                    </manifest>-->
+<!--                </archive>-->
+<!--            </configuration>-->
+<!--            <executions>-->
+<!--                <execution>-->
+<!--                    <id>make-assembly</id>-->
+<!--                    <phase>package</phase>-->
+<!--                    <goals>-->
+<!--                        <goal>single</goal>-->
+<!--                    </goals>-->
+<!--                </execution>-->
+<!--            </executions>-->
+<!--        </plugin>-->
+        </plugins>
+    </build>
+</project>
