@@ -9,6 +9,7 @@ import org.apache.hadoop.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,6 +19,7 @@ import java.io.InputStream;
  * @describe
  * @createTime 2019-12-19 15:15
  */
+@Service
 @Component
 @ConditionalOnBean(FileSystem.class)
 @Slf4j

@@ -6,8 +6,9 @@ import org.apache.hadoop.fs.FileSystem;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
-
+@Component
 @Configuration
 @Slf4j
 public class HadoopConfig {
@@ -31,13 +32,13 @@ public class HadoopConfig {
         conf.addResource(hdfsSite);
         conf.set("fs.hdfs.impl", "org.apache.hadoop.hdfs.DistributedFileSystem");
 
-        log.info("===============【hadoop configuration info start.】===============");
-        log.info("【hadoop conf】: size:{}, {}", conf.size(), conf.toString());
-        log.info("【fs.defaultFS】: {}", conf.get("fs.defaultFS"));
-        log.info("【fs.hdfs.impl】: {}", conf.get("fs.hdfs.impl"));
+//        log.info("===============【hadoop configuration info start.】===============");
+//        log.info("【hadoop conf】: size:{}, {}", conf.size(), conf.toString());
+//        log.info("【fs.defaultFS】: {}", conf.get("fs.defaultFS"));
+//        log.info("【fs.hdfs.impl】: {}", conf.get("fs.hdfs.impl"));
         FileSystem fs = FileSystem.newInstance(conf);
-        log.info("【fileSystem scheme】: {}", fs.getScheme());
-        log.info("===============【hadoop configuration info end.】===============");
+//        log.info("【fileSystem scheme】: {}", fs.getScheme());
+//        log.info("===============【hadoop configuration info end.】===============");
         return fs;
     }
 }

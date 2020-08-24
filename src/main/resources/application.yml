@@ -1,9 +1,9 @@
 debug: true
 hadoop:
-  user: "localhost"
-  hdfs:
-    hdfs-site: "hdfs-site.xml"
-    core-site: "core-site.xml"
+    user: "localhost"
+    hdfs:
+      hdfs-site: "hdfs-site.xml"
+      core-site: "core-site.xml"
 
 hive:
   url: jdbc:hive2://localhost:10000/hive
